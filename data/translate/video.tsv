@@ -1,0 +1,16 @@
+start	end	text
+0	4000	Hoy te voy a enseñar cómo puedes usar Inteligencia Artificial y Python para pasar un vídeo de
+4000	5440	YouTube a texto.
+5440	9200	Lo primero y más importante es que necesitas estas dependencias, whisper, pytube y por
+9200	13880	supuesto FFMP, importamos las dependencias de pytube y whisper, creamos una variable
+13880	17560	con nuestro vídeo de youtube y una variable donde vamos a cargar el modelo de whisper.
+17560	20880	En este caso vamos a utilizar el small que es bastante rápido y funciona bien.
+20880	24280	Recuperamos el vídeo de youtube con pytube y lo convertimos en audio.
+24280	28000	Vamos a descargar este archivo de audio, creamos una variable result donde guardaremos
+28000	32080	los resultados del modelo una vez que estamos transcribiendo el archivo que habíamos descargado
+32080	36440	y finalmente solo tenemos que pintar los resultados, guardamos los cambios y ejecutamos nuestro
+36440	37440	fichero.
+37440	40320	Es normal que tarde un poco porque tiene que descargarse el modelo que son unos cuantos
+40320	43840	megas y además utilizando machine learning va a entender el audio.
+43840	48040	Y después de un rato ya tenemos justamente el texto de nuestro vídeo transcrito.
+48040	49800	Si te ha gustado esto dale like.
