@@ -23,7 +23,7 @@ class FormularioMaestroDesign(tk.Tk):
     
     def config_window(self):
         # Configuración inicial de la ventana
-        self.title('SnapEdit')
+        self.title('UdlaMaker')
         self.iconbitmap("./imagenes/logo.ico")
         w, h = 1024, 600        
         util_ventana.centrar_ventana(self, w, h)        

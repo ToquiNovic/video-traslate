@@ -11,19 +11,25 @@ class FormularioInfoDesign(tk.Toplevel):
 
     def config_window(self):
         # Configuración inicial de la ventana
-        self.title('SnapEdit')
+        self.title('UdlaMaker')
         self.iconbitmap("./imagenes/logo.ico")
-        w, h = 400, 100        
+        w, h = 400, 120        
         util_ventana.centrar_ventana(self, w, h)     
     
     def contruirWidget(self):         
         self.labelVersion = tk.Label(self, text="Version : 1.0")
-        self.labelVersion.config(fg="#000000", font=(
-            "Roboto", 15), pady=10, width=20)
-        self.labelVersion.pack()
+        self.labelVersion.config(fg="#000000", font=("Roboto", 12, 'bold'))
+        self.labelVersion.pack(side='top')
+        
+        self.labelDetail = tk.Label(self, text="Generar subtítulos con inteligencia artificial,\npartiendo de un video o audio.")
+        self.labelDetail.config(fg="#000000", font=("Roboto", 12))
+        self.labelDetail.pack(side='top')
 
-        self.labelAutor = tk.Label(self, text="Autor : udla")
-        self.labelAutor.config(fg="#000000", font=(
-            "Roboto", 15), pady=10, width=20)
-        self.labelAutor.pack()
+        self.labelAutor = tk.Label(self, text="Autores:")
+        self.labelAutor.config(fg="#000000", font=( "Roboto", 12,"bold"))
+        self.labelAutor.pack(side='top')
+        
+        self.labelAutor1 = tk.Label(self, text="Daniel Toquica & Carlos Ortiz")
+        self.labelAutor1.config(fg="#000000", font=( "Roboto", 12))
+        self.labelAutor1.pack(side='top')
 

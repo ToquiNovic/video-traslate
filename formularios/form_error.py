@@ -11,7 +11,7 @@ class ModalError(tk.Toplevel):
 
     def config_window(self):
         # Configuración inicial de la ventana
-        self.title('SnapEdit')
+        self.title('UdlaMaker')
         self.iconbitmap("./imagenes/logo.ico")
         w, h = 400, 100        
         util_ventana.centrar_ventana(self, w, h)     
