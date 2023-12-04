@@ -17,11 +17,6 @@ from tkinter import filedialog
 from config import COLOR_BARRA_SUPERIOR, COLOR_MENU_LATERAL, COLOR_CUERPO_PRINCIPAL, COLOR_MENU_CURSOR_ENCIMA
 
 class FormularioGraficasDesign():
-    change_settings({"IMAGEMAGICK_BINARY": "/opt/homebrew/bin/convert"})
-
-    # Actualiza la ruta de FFmpeg
-    os.environ["FFMPEG_BINARY"] = "/usr/local/bin/ffmpeg"   
-
     def __init__(self, panel_principal):           
         # Crear dos subgráficos usando Matplotlib
         self.ruta_carpeta = StringVar()
