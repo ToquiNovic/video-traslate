@@ -11,9 +11,10 @@ from formularios.form_info_design import FormularioInfoDesign
 class FormularioMaestroDesign(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.logo = util_img.leer_imagen("./imagenes/udla.png", (500, 136))
-        self.perfil = util_img.leer_imagen("./imagenes/udla1.png", (100, 100))
+        self.logo = util_img.leer_imagen("./imagenes/udla.png", (500, 350))
+        self.perfil = util_img.leer_imagen("./imagenes/udla1.png", (125, 125))
         self.img_sitio_construccion = util_img.leer_imagen("./imagenes/sitio_construccion.png", (200, 200))
+        self.img_download_pdf = util_img.leer_imagen("./imagenes/pdf2.png", (256, 256))
         self.config_window()
         self.paneles()
         self.controles_barra_superior()        
@@ -77,12 +78,13 @@ class FormularioMaestroDesign(tk.Tk):
         self.labelPerfil.pack(side=tk.TOP, pady=20)
         
         self.buttonDashBoard = tk.Button(self.menu_lateral)
-        #self.buttonProfile = tk.Button(self.menu_lateral)        
+        self.buttonDocs = tk.Button(self.menu_lateral)        
         #self.buttonSettings = tk.Button(self.menu_lateral)
         self.buttonInfo = tk.Button(self.menu_lateral)        
 
         buttons_info = [
             ("Subtitulos", "🔠", self.buttonDashBoard,self.abrir_panel_graficas ),
+            ("Documentación", "📚", self.buttonDocs,self.abrir_panel_en_construccion ),
             ("Info", "🟢​", self.buttonInfo,self.abrir_panel_info),
         ]
 
@@ -90,7 +92,6 @@ class FormularioMaestroDesign(tk.Tk):
             self.configurar_boton_menu(button, text, icon, font_awesome, ancho_menu, alto_menu,comando)                    
     
     def controles_cuerpo(self):
-        # Imagen en el cuerpo principal
         label = tk.Label(self.cuerpo_principal, image=self.logo,
                          bg=COLOR_CUERPO_PRINCIPAL)
         label.place(x=0, y=0, relwidth=1, relheight=1)        
@@ -128,7 +129,7 @@ class FormularioMaestroDesign(tk.Tk):
         
     def abrir_panel_en_construccion(self):   
         self.limpiar_panel(self.cuerpo_principal)     
-        FormularioSitioConstruccionDesign(self.cuerpo_principal,self.img_sitio_construccion) 
+        FormularioSitioConstruccionDesign(self.cuerpo_principal,self.img_download_pdf) 
 
     def abrir_panel_info(self):           
         FormularioInfoDesign()                    

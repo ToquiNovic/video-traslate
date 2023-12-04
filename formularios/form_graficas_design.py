@@ -21,16 +21,24 @@ class FormularioGraficasDesign():
         # Crear dos subgráficos usando Matplotlib
         self.ruta_carpeta = StringVar()
         
+        """  barra_inferior = Frame(panel_principal, bg="red")
+        barra_inferior.pack(side='left', fill='both',expand=True) """
+        
         panelIzq = Frame(panel_principal, bg=COLOR_CUERPO_PRINCIPAL)
         panelIzq.pack(side='left', fill='both',expand=True)  
         
         panelDer = Frame(panel_principal, bg=COLOR_CUERPO_PRINCIPAL)
         panelDer.pack(side='right', fill='both', expand=True) 
         
-        """  barra_inferior = Frame(panel_principal, bg=COLOR_BARRA_SUPERIOR)
-        barra_inferior.pack(side='bottom', fill='both',expand=True) """
+        """ boton_atras = Button(barra_inferior,
+                                   text="Atras", bd=0,
+                                   font=("Roboto", 12, "bold"),
+                                   borderwidth=0, 
+                                   relief="flat" ,
+                                   command=abrir_panel_info(self))
+        boton_atras.pack(side='top',) """
         
-         # Etiqueta para el idioma
+        # Etiqueta para el idioma
         label_idioma = Label(panelDer, text="Selecciona el idioma de traducción",
                              font=("Roboto", 18, "bold"), fg="black", bg=COLOR_CUERPO_PRINCIPAL)
         label_idioma.pack(side='top', pady=10, padx=10)
@@ -122,11 +130,11 @@ class FormularioGraficasDesign():
                         messagebox.showerror("Error","No se seleccionó ningún archivo.")
                         return None
                 
-                    archivo_original=archivo
+                    print(f"h******** {archivo}")
                     realizar_traduccion(archivo,idioma)
                 
                     nombre_archivo_sin_extension = os.path.splitext(os.path.basename(archivo))[0]
-                    ruta_subtitulos = f"./data/translate/{nombre_archivo_sin_extension}.srt"
+                    ruta_subtitulos = f"./data/translate/video.srt"
 
                     video_original = VideoFileClip(archivo)
                     #video_original = video_original.set_fps(30)
@@ -169,7 +177,6 @@ class FormularioGraficasDesign():
                 return subtitles
             else:
                 messagebox.showerror("Error",f"El archivo de subtítulos no existe en la ruta: {ruta_subtitulos}")
-                print(f"El archivo de subtítulos no existe en la ruta: {ruta_subtitulos}")
             return None
 
         def crear_video_con_subtitulos(video_original, subtitles):
@@ -177,9 +184,11 @@ class FormularioGraficasDesign():
             try:
                 video_salida = "video_con_subtitulos.mp4"
                 result = CompositeVideoClip([video_original, subtitles.set_position(('center', 'bottom'))])
+                
                 result.write_videofile(video_salida, codec='libx264', audio_codec='aac', temp_audiofile='temp-audio.m4a', remove_temp=True)
+                
                 print(f"Video creado exitosamente: {video_salida}")
-                print(os.path.abspath(os.path.join(os.path.expanduser("~"), video_salida)))
+                print(os.path.abspath(os.path.join(os.path.expanduser(), video_salida)))
                 abrir_reproductor(os.path.abspath(os.path.join(os.path.expanduser("~"), video_salida)))
 
             except Exception as e:
