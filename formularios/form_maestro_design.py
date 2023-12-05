@@ -83,7 +83,7 @@ class FormularioMaestroDesign(tk.Tk):
         self.buttonInfo = tk.Button(self.menu_lateral)        
 
         buttons_info = [
-            ("Subtitulos", "🔠", self.buttonDashBoard,self.abrir_panel_graficas ),
+            ("Subtítulos", "🔠", self.buttonDashBoard,self.abrir_panel_graficas ),
             ("Documentación", "📚", self.buttonDocs,self.abrir_panel_en_construccion ),
             ("Info", "🟢​", self.buttonInfo,self.abrir_panel_info),
         ]
