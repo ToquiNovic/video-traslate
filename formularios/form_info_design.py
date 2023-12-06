@@ -15,7 +15,8 @@ class FormularioInfoDesign(tk.Toplevel):
         current_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
         self.title('UdlaMaker')
         self.iconbitmap(os.path.join(current_directory, "imagenes", "logo.ico"))
-        w, h = 400, 120        
+        w, h = 450, 165
+        self.resizable(False, False)        
         util_ventana.centrar_ventana(self, w, h)     
     
     def contruirWidget(self):         
