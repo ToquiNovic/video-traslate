@@ -61,7 +61,7 @@ class FormularioMaestroDesign(tk.Tk):
         
         # Etiqueta de informacion
         self.labelTitulo = tk.Label(
-            self.barra_superior, text="tech.dev@udla.edu.co")
+            self.barra_superior, text="soporte: tech.dev@udla.edu.co")
         self.labelTitulo.config(fg="#fff", font=(
             "Roboto", 10), bg=COLOR_BARRA_SUPERIOR, padx=10, width=20)
         self.labelTitulo.pack(side=tk.RIGHT)

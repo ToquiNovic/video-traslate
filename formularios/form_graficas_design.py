@@ -16,6 +16,9 @@ from tkinter import messagebox
 from tkinter import filedialog
 from config import COLOR_BARRA_SUPERIOR, COLOR_MENU_LATERAL, COLOR_CUERPO_PRINCIPAL, COLOR_MENU_CURSOR_ENCIMA
 
+change_settings({"IMAGEMAGICK_BINARY": "/opt/homebrew/bin/convert"})
+os.environ["FFMPEG_BINARY"] = "/usr/local/bin/ffmpeg"
+
 class FormularioGraficasDesign():
     def __init__(self, panel_principal):           
         # Crear dos subgráficos usando Matplotlib
@@ -130,7 +133,6 @@ class FormularioGraficasDesign():
                         messagebox.showerror("Error","No se seleccionó ningún archivo.")
                         return None
                 
-                    print(f"h******** {archivo}")
                     realizar_traduccion(archivo,idioma)
                 
                     nombre_archivo_sin_extension = os.path.splitext(os.path.basename(archivo))[0]
@@ -188,8 +190,9 @@ class FormularioGraficasDesign():
                 result.write_videofile(video_salida, codec='libx264', audio_codec='aac', temp_audiofile='temp-audio.m4a', remove_temp=True)
                 
                 print(f"Video creado exitosamente: {video_salida}")
-                print(os.path.abspath(os.path.join(os.path.expanduser(), video_salida)))
-                abrir_reproductor(os.path.abspath(os.path.join(os.path.expanduser("~"), video_salida)))
+                boton_subir.config(state="normal")
+                messagebox.showinfo("Información",f"El archivo se genero con éxito")
+                abrir_reproductor()
 
             except Exception as e:
                 print(f"Error al escribir el video: {e}")
@@ -197,6 +200,10 @@ class FormularioGraficasDesign():
         def realizar_traduccion(archivo, idioma):
             print("Traduciendo...")
 
+            # Deshabilitar el botón mientras se ejecuta la traducción
+            boton_subir.config(state="disabled")
+            messagebox.showinfo("Información", "La traducción está en progreso. Por favor, espera...")
+            
             # Mapeo de nombres de idiomas a códigos
             codigos_idioma = {
                 'español': 'es',
@@ -234,6 +241,6 @@ class FormularioGraficasDesign():
             else:
                 print("Error en la traducción. Consulte los mensajes de error para obtener más información.")
 
-        def abrir_reproductor(video_path):
-                video_url = f'file://{video_path}'
+        def abrir_reproductor():
+                video_url = f'file:///Users/caol/Documents/Projects/own/video-traslate/video_con_subtitulos.mp4'
                 webbrowser.open(video_url)

@@ -13,7 +13,7 @@ class FormularioInfoDesign(tk.Toplevel):
         # Configuración inicial de la ventana
         self.title('UdlaMaker')
         self.iconbitmap("./imagenes/logo.ico")
-        w, h = 400, 120        
+        w, h = 400, 150        
         util_ventana.centrar_ventana(self, w, h)     
     
     def contruirWidget(self):         
@@ -21,15 +21,27 @@ class FormularioInfoDesign(tk.Toplevel):
         self.labelVersion.config(fg="#000000", font=("Roboto", 12, 'bold'))
         self.labelVersion.pack(side='top')
         
-        self.labelDetail = tk.Label(self, text="Generar subtítulos con inteligencia artificial,\npartiendo de un video o audio.")
+        self.labelDetail = tk.Label(self, text="Generación automatica de subtítulos en inglés.")
         self.labelDetail.config(fg="#000000", font=("Roboto", 12))
         self.labelDetail.pack(side='top')
+        
+        self.labelSemillero = tk.Label(self, text="Semillero:")
+        self.labelSemillero.config(fg="#000000", font=( "Roboto", 12,"bold"))
+        self.labelSemillero.pack(side='top')
+        
+        self.labelSemilleroName = tk.Label(self, text="Robótica y sistemas ingeligentes")
+        self.labelSemilleroName.config(fg="#000000", font=( "Roboto", 12))
+        self.labelSemilleroName.pack(side='top')
 
         self.labelAutor = tk.Label(self, text="Autores:")
         self.labelAutor.config(fg="#000000", font=( "Roboto", 12,"bold"))
         self.labelAutor.pack(side='top')
-        
-        self.labelAutor1 = tk.Label(self, text="Daniel Toquica & Carlos Ortiz")
+                
+        self.labelAutor1 = tk.Label(self, text="Ing. Jesús Pinto & Angie Ortiz & Daniel Toquica & Carlos Ortiz")
         self.labelAutor1.config(fg="#000000", font=( "Roboto", 12))
         self.labelAutor1.pack(side='top')
+        
+        """ self.labelAutor1 = tk.Label(self, text="Daniel Toquica & Carlos Ortiz")
+        self.labelAutor1.config(fg="#000000", font=( "Roboto", 12))
+        self.labelAutor1.pack(side='top') """
 
