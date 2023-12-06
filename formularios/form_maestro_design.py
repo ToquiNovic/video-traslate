@@ -53,16 +53,13 @@ class FormularioMaestroDesign(tk.Tk):
         # Etiqueta de título
         self.labelTitulo = tk.Label(self.barra_superior, text="Funciones")
         self.labelTitulo.config(fg="#fff", font=(
-            "Roboto", 16), bg=COLOR_BARRA_SUPERIOR, pady=10, width=16)
+            "Roboto", 16), bg=COLOR_BARRA_SUPERIOR, pady=10, width=20)
         self.labelTitulo.pack(side=tk.LEFT)
 
         # Botón del menú lateral
-        """ self.buttonMenuLateral = tk.Button(self.barra_superior, text="☰", font=font_awesome,
-                                           bd=0, bg=COLOR_BARRA_SUPERIOR, 
-                                           background=COLOR_BARRA_SUPERIOR,
-                                           fg="white",
-                                           )
-        self.buttonMenuLateral.pack(side=tk.LEFT) """
+        self.buttonMenuLateral = tk.Button(self.barra_superior, text="\uf0c9", font=font_awesome,
+                                           command=self.toggle_panel, bd=0, bg=COLOR_BARRA_SUPERIOR, fg="white")
+        self.buttonMenuLateral.pack(side=tk.LEFT)
         
         # Etiqueta de informacion
         self.labelTitulo = tk.Label(
@@ -75,7 +72,7 @@ class FormularioMaestroDesign(tk.Tk):
         # Configuración del menú lateral
         ancho_menu = 20
         alto_menu = 2
-        font_awesome = font.Font(family='FontAwesome', size=14)
+        font_awesome = font.Font(family='FontAwesome', size=15)
          
          # Etiqueta de perfil
         self.labelPerfil = tk.Label(
@@ -88,9 +85,9 @@ class FormularioMaestroDesign(tk.Tk):
         self.buttonInfo = tk.Button(self.menu_lateral)        
 
         buttons_info = [
-            ("Subtítulos", "🔠", self.buttonDashBoard,self.abrir_panel_graficas ),
-            ("Documentación", "📚", self.buttonDocs,self.abrir_panel_en_construccion ),
-            ("Info", "🟢​", self.buttonInfo,self.abrir_panel_info),
+            ("Subtítulos", "\uf109", self.buttonDashBoard,self.abrir_panel_graficas ),
+            ("Documentación", "\uf007", self.buttonDocs,self.abrir_panel_en_construccion ),
+            ("Info", "\uf129", self.buttonInfo,self.abrir_panel_info),
         ]
 
         for text, icon, button,comando in buttons_info:
@@ -103,7 +100,7 @@ class FormularioMaestroDesign(tk.Tk):
   
     def configurar_boton_menu(self, button, text, icon, font_awesome, ancho_menu, alto_menu, comando):
         button. config(text=f"  {icon}    {text}", anchor="w", font=font_awesome,
-                      bd=0, bg=COLOR_MENU_LATERAL, fg="black", width=ancho_menu, height=alto_menu,
+                      bd=0, bg=COLOR_MENU_LATERAL, fg="white", width=ancho_menu, height=alto_menu,
                       command = comando)
         button.pack(side=tk.TOP)
         self.bind_hover_events(button)
@@ -115,11 +112,11 @@ class FormularioMaestroDesign(tk.Tk):
 
     def on_enter(self, event, button):
         # Cambiar estilo al pasar el ratón por encima
-        button.config(bg=COLOR_MENU_CURSOR_ENCIMA, fg='green', )
+        button.config(bg=COLOR_MENU_CURSOR_ENCIMA, fg='white')
 
     def on_leave(self, event, button):
         # Restaurar estilo al salir el ratón
-        button.config(bg=COLOR_MENU_LATERAL,fg='black')
+        button.config(bg=COLOR_MENU_CURSOR_ENCIMA, fg='white')
 
     def toggle_panel(self):
         # Alternar visibilidad del menú lateral

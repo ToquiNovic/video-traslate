@@ -43,7 +43,7 @@ class FormularioGraficasDesign():
         
         # Etiqueta para el idioma
         label_idioma = Label(panelDer, text="Selecciona el idioma de traducción",
-                             font=("Roboto", 18, "bold"), fg="black", bg=COLOR_CUERPO_PRINCIPAL)
+                             font=("Roboto", 16, "bold"), fg="black", bg=COLOR_CUERPO_PRINCIPAL)
         label_idioma.pack(side='top', pady=10, padx=10)
         
         # Variable para almacenar el idioma seleccionado
@@ -79,7 +79,7 @@ class FormularioGraficasDesign():
         
         # Etiqueta para el tipo de archivo
         label_tipo_archivo = Label(panelIzq, text="Selecciona el tipo de archivo", 
-                                    font=("Roboto", 18, "bold"), bg=COLOR_CUERPO_PRINCIPAL, fg="black" )
+                                    font=("Roboto", 16, "bold"), bg=COLOR_CUERPO_PRINCIPAL, fg="black" )
         label_tipo_archivo.pack(side='top', pady=10, padx=10)
 
         opciones_tipo_archivo = ["Audio", "Video"]
@@ -96,7 +96,7 @@ class FormularioGraficasDesign():
         
         # Etiqueta para el tipo de archivo
         label_archivo = Label(panelIzq, text="Cargue un archivo para comenzar" , font=(
-            "Roboto", 18, "bold"), bg=COLOR_CUERPO_PRINCIPAL, fg="black" )
+            "Roboto", 16, "bold"), bg=COLOR_CUERPO_PRINCIPAL, fg="black" )
         label_archivo.pack(side='top', pady=10, padx=10)
         
         boton_subir = Button(panelIzq,
@@ -201,7 +201,7 @@ class FormularioGraficasDesign():
 
             # Deshabilitar el botón mientras se ejecuta la traducción
             boton_subir.config(state="disabled")
-            messagebox.showinfo("Información", "La traducción está en progreso. Por favor, espera...")
+            messagebox.showinfo("Información", "La traducción está en progreso. Por favor, espera...", parent=panel_principal)
             
             # Mapeo de nombres de idiomas a códigos
             codigos_idioma = {
