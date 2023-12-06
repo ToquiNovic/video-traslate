@@ -30,8 +30,8 @@ class FormularioMaestroDesign(tk.Tk):
         self.title('UdlaMaker')
         self.iconbitmap(os.path.join(current_directory, "imagenes", "logoV2.ico"))
         w, h = 1024, 600
+        self.resizable(False, False)
         util_ventana.centrar_ventana(self, w, h)
-
 
     def paneles(self):        
          # Crear paneles: barra superior, menú lateral y cuerpo principal
