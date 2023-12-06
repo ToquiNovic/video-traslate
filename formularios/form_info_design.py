@@ -1,3 +1,4 @@
+import os
 import tkinter as tk
 from typing_extensions import Literal
 import util.util_ventana as util_ventana
@@ -11,8 +12,9 @@ class FormularioInfoDesign(tk.Toplevel):
 
     def config_window(self):
         # Configuración inicial de la ventana
+        current_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
         self.title('UdlaMaker')
-        self.iconbitmap("./imagenes/logo.ico")
+        self.iconbitmap(os.path.join(current_directory, "imagenes", "logo.ico"))
         w, h = 400, 120        
         util_ventana.centrar_ventana(self, w, h)     
     

@@ -3,6 +3,15 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+/instalador
+listen.py
+video_con_subtitulos
+vide-trastale
+vide-trastaleV2
+main.spec
+VIDEO INSTITUCIONAL 2023.*
+.vscode
+
 # C extensions
 *.so
 *.mp4
