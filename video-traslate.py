@@ -1,6 +1,6 @@
 import subprocess
 import os
-import whisper
+""" import whisper """
 from tkinter import Tk, Label, Button, StringVar, OptionMenu
 from tkinter.filedialog import askopenfilename
 from moviepy.config import change_settings

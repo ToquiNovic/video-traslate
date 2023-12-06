@@ -1,7 +1,7 @@
 import tkinter as tk
 import subprocess
 import os
-import whisper
+""" import whisper """
 import webbrowser
 from moviepy.config import change_settings
 from moviepy.video.tools.subtitles import file_to_subtitles, SubtitlesClip
@@ -16,8 +16,9 @@ from tkinter import messagebox
 from tkinter import filedialog
 from config import COLOR_BARRA_SUPERIOR, COLOR_MENU_LATERAL, COLOR_CUERPO_PRINCIPAL, COLOR_MENU_CURSOR_ENCIMA
 
-change_settings({"IMAGEMAGICK_BINARY": "/opt/homebrew/bin/convert"})
-os.environ["FFMPEG_BINARY"] = "/usr/local/bin/ffmpeg"
+change_settings({"IMAGEMAGICK_BINARY": r"C:/Program Files/ImageMagick-7.1.1-Q16-HDRI/magick.exe"})
+
+os.environ["FFMPEG_BINARY"] = r"C:/ProgramData/chocolatey/bin/ffmpeg.exe"
 
 class FormularioGraficasDesign():
     def __init__(self, panel_principal):           
