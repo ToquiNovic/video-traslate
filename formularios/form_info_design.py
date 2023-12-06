@@ -14,7 +14,7 @@ class FormularioInfoDesign(tk.Toplevel):
         # Configuración inicial de la ventana
         current_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
         self.title('UdlaMaker')
-        self.iconbitmap(os.path.join(current_directory, "imagenes", "logo.ico"))
+        self.iconbitmap(os.path.join(current_directory, "imagenes", "logoV2.ico"))
         w, h = 450, 165
         self.resizable(False, False)        
         util_ventana.centrar_ventana(self, w, h)     

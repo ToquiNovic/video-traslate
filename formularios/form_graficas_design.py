@@ -21,26 +21,12 @@ change_settings({"IMAGEMAGICK_BINARY": r"C:/Program Files/ImageMagick-7.1.1-Q16-
 os.environ["FFMPEG_BINARY"] = r"C:/ProgramData/chocolatey/bin/ffmpeg.exe"
 
 class FormularioGraficasDesign():
-    def __init__(self, panel_principal):           
-        # Crear dos subgráficos usando Matplotlib
-        self.ruta_carpeta = StringVar()
-        
-        """  barra_inferior = Frame(panel_principal, bg="red")
-        barra_inferior.pack(side='left', fill='both',expand=True) """
-        
+    def __init__(self, panel_principal):                   
         panelIzq = Frame(panel_principal, bg=COLOR_CUERPO_PRINCIPAL)
         panelIzq.pack(side='left', fill='both',expand=True)  
         
         panelDer = Frame(panel_principal, bg=COLOR_CUERPO_PRINCIPAL)
         panelDer.pack(side='right', fill='both', expand=True) 
-        
-        """ boton_atras = Button(barra_inferior,
-                                   text="Atras", bd=0,
-                                   font=("Roboto", 12, "bold"),
-                                   borderwidth=0, 
-                                   relief="flat" ,
-                                   command=abrir_panel_info(self))
-        boton_atras.pack(side='top',) """
         
         # Etiqueta para el idioma
         label_idioma = Label(panelDer, text="Selecciona el idioma de traducción",

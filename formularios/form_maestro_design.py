@@ -57,15 +57,15 @@ class FormularioMaestroDesign(tk.Tk):
         self.labelTitulo.pack(side=tk.LEFT)
 
         # Botón del menú lateral
-        self.buttonMenuLateral = tk.Button(self.barra_superior, text="\uf0c9", font=font_awesome,
+        """ self.buttonMenuLateral = tk.Button(self.barra_superior, text="\uf0c9", font=font_awesome,
                                            command=self.toggle_panel, bd=0, bg=COLOR_BARRA_SUPERIOR, fg="white")
-        self.buttonMenuLateral.pack(side=tk.LEFT)
+        self.buttonMenuLateral.pack(side=tk.LEFT) """
         
         # Etiqueta de informacion
         self.labelTitulo = tk.Label(
             self.barra_superior, text="soporte: tech.dev@udla.edu.co")
         self.labelTitulo.config(fg="#fff", font=(
-            "Roboto", 10), bg=COLOR_BARRA_SUPERIOR, padx=10, width=20)
+            "Roboto", 10), bg=COLOR_BARRA_SUPERIOR,padx=15, width=20)
         self.labelTitulo.pack(side=tk.RIGHT)
     
     def controles_menu_lateral(self):
@@ -85,9 +85,9 @@ class FormularioMaestroDesign(tk.Tk):
         self.buttonInfo = tk.Button(self.menu_lateral)        
 
         buttons_info = [
-            ("Subtítulos", "\uf109", self.buttonDashBoard,self.abrir_panel_graficas ),
-            ("Documentación", "\uf007", self.buttonDocs,self.abrir_panel_en_construccion ),
-            ("Info", "\uf129", self.buttonInfo,self.abrir_panel_info),
+            ("Subtítulos", "🔠", self.buttonDashBoard,self.abrir_panel_graficas ),
+            ("Documentación", "📖", self.buttonDocs,self.abrir_panel_en_construccion ),
+            ("Info", "⚙️", self.buttonInfo,self.abrir_panel_info),
         ]
 
         for text, icon, button,comando in buttons_info:
@@ -116,7 +116,7 @@ class FormularioMaestroDesign(tk.Tk):
 
     def on_leave(self, event, button):
         # Restaurar estilo al salir el ratón
-        button.config(bg=COLOR_MENU_CURSOR_ENCIMA, fg='white')
+        button.config(bg=COLOR_MENU_LATERAL, fg='white')
 
     def toggle_panel(self):
         # Alternar visibilidad del menú lateral
