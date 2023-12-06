@@ -94,7 +94,6 @@ class FormularioGraficasDesign():
         select_tipo_archivo.pack(side='top', pady=10, padx=10) 
         menu_tipo_archivo = OptionMenu(panelIzq, tipo_archivo, *opciones_tipo_archivo)
         
-    
         # Etiqueta para el tipo de archivo
         label_archivo = Label(panelIzq, text="Cargue un archivo para comenzar" , font=(
             "Roboto", 18, "bold"), bg=COLOR_CUERPO_PRINCIPAL, fg="black" )

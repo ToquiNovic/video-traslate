@@ -1,3 +1,4 @@
+import os
 import tkinter as tk
 from tkinter import font
 from config import COLOR_BARRA_SUPERIOR, COLOR_MENU_LATERAL, COLOR_CUERPO_PRINCIPAL, COLOR_MENU_CURSOR_ENCIMA
@@ -11,10 +12,12 @@ from formularios.form_info_design import FormularioInfoDesign
 class FormularioMaestroDesign(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.logo = util_img.leer_imagen("./imagenes/udla.png", (500, 350))
-        self.perfil = util_img.leer_imagen("./imagenes/udla1.png", (125, 125))
-        self.img_sitio_construccion = util_img.leer_imagen("./imagenes/sitio_construccion.png", (200, 200))
-        self.img_download_pdf = util_img.leer_imagen("./imagenes/pdf2.png", (256, 256))
+        current_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+        print(current_directory)
+        self.logo = util_img.leer_imagen(os.path.join(current_directory, "imagenes", "udla.png"), (500, 350))
+        self.perfil = util_img.leer_imagen(os.path.join(current_directory, "imagenes", "udla1.png"), (125, 125))
+        self.img_sitio_construccion = util_img.leer_imagen(os.path.join(current_directory, "imagenes", "sitio_construccion.png"), (200, 200))
+        self.img_download_pdf = util_img.leer_imagen(os.path.join(current_directory, "imagenes", "pdf2.png"), (256, 256))
         self.config_window()
         self.paneles()
         self.controles_barra_superior()        
@@ -23,10 +26,12 @@ class FormularioMaestroDesign(tk.Tk):
     
     def config_window(self):
         # Configuración inicial de la ventana
+        current_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
         self.title('UdlaMaker')
-        self.iconbitmap("./imagenes/logo.ico")
-        w, h = 1024, 600        
-        util_ventana.centrar_ventana(self, w, h)        
+        self.iconbitmap(os.path.join(current_directory, "imagenes", "logo.ico"))
+        w, h = 1024, 600
+        util_ventana.centrar_ventana(self, w, h)
+
 
     def paneles(self):        
          # Crear paneles: barra superior, menú lateral y cuerpo principal
